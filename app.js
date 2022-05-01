@@ -23,16 +23,13 @@
 
     // Create Human Object
     let human = {
-        name: '',
-        height: 0,
-        weight: 0,
-        diet: ''
+    
     };
 
     // Use IIFE to get human data from form
     (function getHumanData() {
         let humanData = document.querySelectorAll('#dino-compare input');
-        Array.from(humanData).reduce((acc, input) => ({
+        human = Array.from(humanData).reduce((acc, input) => ({
             ...acc, [input.id]: input.value
         }), {});
     }
