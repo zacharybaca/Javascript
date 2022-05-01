@@ -19,12 +19,24 @@
     let ela = new Dino('Elasmosaurus', 16000, 59, 'carnivor', 'North America', 'Late Cretaceous', 'Elasmosaurus was a marine reptile first discovered in Kansas');
     let pte = new Dino('Pteranodon', 44, 20, 'carnivor', 'North America', 'Late Cretaceous', 'Actually a flying reptile, the Pteranodon is not a dinosaur');
     let pig = new Dino('Pigeon', 0.5, 9, 'herbavor', 'World Wide', 'Holocene', 'All birds are living dinosaurs');
-    
+
 
     // Create Human Object
+    let human = {
+        name: '',
+        height: 0,
+        weight: 0,
+        diet: ''
+    };
 
     // Use IIFE to get human data from form
-
+    (function getHumanData() {
+        let humanData = document.querySelectorAll('#dino-compare input');
+        Array.from(humanData).reduce((acc, input) => ({
+            ...acc, [input.id]: input.value
+        }), {});
+    }
+    )();
 
     // Create Dino Compare Method 1
     // NOTE: Weight in JSON file is in lbs, height in inches. 
