@@ -37,7 +37,14 @@
 
     // Create Dino Compare Method 1
     // NOTE: Weight in JSON file is in lbs, height in inches. 
-
+    let dinoArray = {tri, rex, ank, brach, steg, ela, pte, pig};
+    function compareWeight() {
+        for (const [key, value] of Object.entries(dinoArray)) {
+            for (const i in value) {
+                console.log(`${i}: ${value[i]}`);
+            }
+        }
+    }
     
     // Create Dino Compare Method 2
     // NOTE: Weight in JSON file is in lbs, height in inches.
