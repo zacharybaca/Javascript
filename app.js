@@ -64,7 +64,16 @@
     
     // Create Dino Compare Method 3
     // NOTE: Weight in JSON file is in lbs, height in inches.
-
+    function compareDiet() {
+        for (const [key, value] of Object.entries(dinoArray)) {
+            for (const i in value) {
+             if(i == 'diet'){
+                 console.log(key)
+                 console.log(value[i]);
+             }
+            }
+        }
+    }
 
     // Generate Tiles for each Dino in Array
   
