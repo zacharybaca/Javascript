@@ -81,6 +81,27 @@
         // Add tiles to DOM
         let grid = document.getElementById("grid");
         let div = document.createElement("div");
+        let infoName = document.createElement("h2");
+        let infoImage = document.createElement("img");
+        let infoFact = document.createElement("p");
+        for (const [key, value] of Object.entries(dinoArray)) {
+            for (const i in value) {
+                switch(i) {
+                    case (i == "species"):
+                        infoName.innerHTML = value[i];
+                    case (i == "image"):
+                        infoImage.innerHTML = value[i];
+                    case (i == "fact"):
+                        infoFact.innerHTML = value[i];
+                    default:
+                        break;
+                }
+            }
+            grid.appendChild(div);
+            div.appendChild(infoName);
+            div.appendChild(infoImage);
+            div.appendChild(infoFact);
+        }
 
 
     // Remove form from screen
